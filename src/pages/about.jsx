@@ -68,20 +68,13 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              I’m a passionate tinker, always on the hunt for innovative solutions. 
-              Technology is my playground. I love exploring its possibilities, using it to enhance designs, 
-              and embracing its role in our dynamic lives.
+              I’m a passionate builder and designer who is always on the hunt for innovative solutions. I love exploring the possibilities technology can bring to improve the lives of the human race. I believe every human should have the opportunity to achieve their fullest potential.
               </p>
               <p>
-              In my younger years, I would build things in my dad’s machine shop, zip around the trails on my mountain bike, 
-              and shreded the nearby mountains on my snowboard. 
-              Boredom was a foreign concept to me as I was always finding new ways to interact with the world. 
+              In my younger years, I would build things in my dad’s machine shop, zip around the trails on my mountain bike, and shred the nearby mountains on my snowboard. Boredom was a foreign concept to me as I always loved to find new ways to interact with the world around me.  
               </p>
               <p>
-              In my life I often wear many hats. I’m a husband, father, educator, hacker, designer, snowboarder, outdoorsman, and board gamer.
-              If you’re seeking a collaborator for a creative tech project, a competitor for board game nights, 
-              or a comrade for thrilling outdoor pursuits, I’d love to hear from you. 
-              Let’s create some unforgettable adventures together!
+              Throughout my life, I’ve dabbled and excelled in many roles. I’m a husband, father, educator, hacker, designer, snowboarder, outdoorsman, and board gamer. If you’re seeking a collaborator for a creative tech project, a competitor for board game nights, or a comrade for thrilling outdoor pursuits, I’d love to hear from you. Let’s create some unforgettable adventures together!
               </p>
             </div>
           </div>

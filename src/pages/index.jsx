@@ -260,7 +260,7 @@ export default function Home({ articles }) {
             Hi, I’m Kevin Tame.👋🏻 
           </p>
           <p className="text-base text-zinc-600 dark:text-zinc-400">I’m a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. 
-            I’m currelty trying to build technology to empower every person to reach their fullest potential.</p>
+            I’m currently trying to build technology solutions to empower every person to reach their fullest potential.</p>
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://twitter.com/kevintame"

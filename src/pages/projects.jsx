@@ -3,47 +3,47 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoEddee from '@/images/logos/eddee.svg'
+import logoSoar from '@/images/logos/soar.svg'
+import logoNSG from '@/images/logos/nsg.svg'
+import logoRats from '@/images/logos/rats.svg'
+import logoThread from '@/images/logos/thread.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Soar Scribe',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'AI bot that joins your video calls and provides insights, summaries, and notes on the meeting.',
+    link: { href: 'https://soarscribe.com/', label: 'soarscribe.com' },
+    logo: logoSoar,
   },
   {
-    name: 'Animaginary',
+    name: 'Eddee',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'AI Teaching Assistant that can help teachers in their classroom. Eddee is really good at creating writing prompts and grading student work.',
+    link: { href: 'https://eddee.co/', label: 'eddee.co' },
+    logo: logoEddee,
   },
   {
-    name: 'HelioStream',
+    name: 'The Rats App',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'A web application designed to help humans look out for one another.',
+    link: { href: 'https://theratsapp.com/', label: 'theratsapp.com' },
+    logo: logoRats,
   },
   {
-    name: 'cosmOS',
+    name: 'Netrunner: Null Signal Games',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'Null Signal Games, the fan-made extension of Android: Netrunner, has given new life to the popular Living Card Game discontinued in 2018.',
+    link: { href: 'https://nullsignal.games/', label: 'nullsignal.games' },
+    logo: logoNSG,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Thread',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Thread harnesses the power of relationships to create a new social fabric of diverse individuals deeply engaged with young people facing the most significant opportunity and achievement gaps.',
+    link: { href: 'https://www.thread.org/', label: 'thread.org' },
+    logo: logoThread,
   },
 ]
 
@@ -62,15 +62,15 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Kevin Tame</title>
         <meta
           name="description"
-          content="Things I’ve made trying to put my dent in the universe."
+          content="Contributions I've made to imprint my small mark on the world.."
         />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="Contributions I've made to imprint my small mark on the world."
+        intro="I’ve worked on tons of little projects over the years, but these are the most recent ones that I'm proud of."
       >
         <ul
           role="list"
