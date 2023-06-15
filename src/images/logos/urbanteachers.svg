@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20.2px" height="101px" viewBox="0 0 20.2 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>urbanteachers</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="urbanteachers" fill-rule="nonzero">
+            <polygon id="Path" fill="#FBB447" points="0 0 0 20.2 0 20.2 20.2 40.4 20.2 20.2 20.2 20.2"></polygon>
+            <polygon id="Path" fill="#F26C3A" points="0 40.4 0 40.4 0 40.4 20.2 60.6 20.2 40.4 20.2 40.4 20.2 40.4 0 20.2"></polygon>
+            <polygon id="Path" fill="#7A5EA3" points="0 60.6 0 60.6 20.2 80.8 20.2 60.6 20.2 60.6 0 40.4"></polygon>
+            <polygon id="Path" fill="#73C497" points="0 80.8 0 80.8 20.2 101 20.2 80.8 20.2 80.8 0 60.6"></polygon>
+        </g>
+    </g>
+</svg>

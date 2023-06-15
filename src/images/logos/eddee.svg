@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1882px" height="1882px" viewBox="0 0 1882 1882" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>NISEI Black Circle White Logo</title>
+    <defs>
+        <path d="M940,0 C1459.148,0 1880,420.852 1880,940 C1880,1459.148 1459.148,1880 940,1880 C420.852,1880 0,1459.148 0,940 C0,420.852 420.852,0 940,0 Z" id="path-1"></path>
+    </defs>
+    <g id="NISEI-Black-Circle-White-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(1.000000, 1.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Clip-2" fill="#9C88FF" xlink:href="#path-1"></use>
+        </g>
+        <g id="E" transform="translate(539.000000, 411.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <polygon id="Path" points="731.111012 596.87924 216.385855 596.87924 216.385855 869.430122 803 869.430122 803 1060 0 1060 0 0 777.119964 0 777.119964 187.693351 216.385855 187.693351 216.385855 412.781547 731.111012 412.781547"></polygon>
+        </g>
+    </g>
+</svg>
