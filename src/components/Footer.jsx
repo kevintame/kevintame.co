@@ -27,7 +27,7 @@ export function Footer() {
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Kevin Tame. All rights
-                reserved. <a href="https://giphy.com/gifs/wadedotphoto-reaction-circle-made-you-look-m71PD4HtgmH613tqBy" target="_blank"> Click Me</a>
+                reserved. <a href="https://giphy.com/gifs/wadedotphoto-reaction-circle-made-you-look-m71PD4HtgmH613tqBy" target="_blank" rel="noopener noreferrer"> Click Me</a>
               </p>
             </div>
           </Container.Inner>
