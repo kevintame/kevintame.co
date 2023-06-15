@@ -48,7 +48,7 @@ export default function Uses() {
             I only use a mouse when playing Minecraft with my kids. There is just something very pleasing to me about using the trackpad.          
             </Tool>
           </ToolsSection>
-          <ToolsSection title="Development tools">
+          <ToolsSection title="Development Tools">
             <Tool title="VS Code">
             It’s good, and I don’t have any complaints. I still use Sublime Text here and there, but for the most part, I mostly use this. 
             </Tool>
