@@ -37,7 +37,7 @@ export default function Uses() {
       </Head>
       <SimpleLayout
         title="Tools I use and reccomend to others."
-        intro="Here’s a big list of some of the stuff I like."
+        intro="Here’s a list of some of the things I use regularly and really like."
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
@@ -94,6 +94,26 @@ export default function Uses() {
             <Tool title="Danner Mountain 600">
               My dad had Danner boots when I was growing up. 
               When I finally was old enough to get my own I never looked back. 
+            </Tool>
+          </ToolsSection>
+          <ToolsSection title="Board Games">
+            <Tool title="Android: Netrunner">
+            Netrunner is a two-player asymmetric card game set in a dystopian future where 
+            four megacorporations control almost every aspect of daily life. 
+            Legendary hackers known as “runners” aim to fight the corps’ influence by 
+            hacking into their servers and preventing them from advancing their sinister agendas.
+            </Tool>
+            <Tool title="Terra Mystica">
+            Terra Mystica is an economic and territory building game the rewards long term planning and engine building.
+            </Tool>
+            <Tool title="Agricola">
+            Agricola is the classic game where players take on the role of 17th century farmers 
+            and guide their families to wealth, health, and prosperity. 
+            Every game challenges players to make different strategic choices. The player who establishes the best farmyard wins!
+            </Tool>
+            <Tool title="Power Grid">
+            In the game, each player represents a company which owns power plants and tries to supply electricity to cities. 
+            During the game, players bid on power plants and buy resources to provide electricity to the growing number of cities in their network. 
             </Tool>
           </ToolsSection>
         </div>
