@@ -8,6 +8,7 @@ import logoSoar from '@/images/logos/soar.svg'
 import logoNSG from '@/images/logos/nsg.svg'
 import logoRats from '@/images/logos/rats.svg'
 import logoThread from '@/images/logos/thread.svg'
+import logoJobson from '@/images/logos/jobson.svg'
 
 const projects = [
   {
@@ -23,6 +24,13 @@ const projects = [
       'AI Teaching Assistant that can help teachers in their classroom. Eddee is really good at creating writing prompts and grading student work.',
     link: { href: 'https://eddee.co/', label: 'eddee.co' },
     logo: logoEddee,
+  },
+  {
+    name: 'Jobson',
+    description:
+      'When I closed down Thrive I wanted to make sure my employees landed in a good place for their next job. I built JOBSON as an AI tool that automcically tailors their resumes and cover letters based on the job description. It make applying so much easier.',
+    link: { href: 'https://jobson.co/', label: 'jobson.co' },
+    logo: logoJobson,
   },
   {
     name: 'The Rats App',
