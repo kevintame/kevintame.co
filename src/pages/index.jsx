@@ -112,20 +112,10 @@ function SocialLink({ icon: Icon, ...props }) {
 function Resume() {
   let resume = [
     {
-      company: 'Soar Inc.',
-      title: 'Product Director and AI Wrangler',
+      company: 'Vivint Smart Home',
+      title: 'Lead UX Designer - AI',
       logo: logoSoar,
-      start: '2023',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Null Signal Games',
-      title: 'VP of Product',
-      logo: logoNSG,
-      start: '2018',
+      start: '2025',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
@@ -142,6 +132,20 @@ function Resume() {
       },
     },
     {
+      company: 'Worplace AI a Soar Company',
+      title: 'Director of Product and Design - AI',
+      logo: logoSoar,
+      start: '2023',
+      end: '2025',
+    },
+    {
+      company: 'Null Signal Games',
+      title: 'VP of Product',
+      logo: logoNSG,
+      start: '2018',
+      end: '2025',
+    },
+    {
       company: 'Thrive Software',
       title: 'Co-Founder and CPO',
       logo: logoRats,
@@ -149,7 +153,7 @@ function Resume() {
       end: '2023',
     },
     {
-      company: 'Urban Teachers',
+      company: 'City Teaching Alliance formaly Urban Teachers',
       title: 'Director of Technology',
       logo: logoUrbanteachers,
       start: '2014',
@@ -248,19 +252,19 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content="I’m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I'm currelty trying to build technology to empower every person to reach their fullest potential."
+          content="I’m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I'm currelty trying to build AI technology experiences to help empower every person to reach their fullest potential."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Product leader, founder, and amateur adventurer.
+            Product leader, founder, designer, and amateur adventurer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Hi, I’m Kevin Tame.👋🏻 
           </p>
           <p className="text-base text-zinc-600 dark:text-zinc-400">I’m a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. 
-            I’m currently trying to build technology solutions to empower every person to reach their fullest potential.</p>
+            I’m currently trying to build AI technology experiences to help empower every person to reach their fullest potential.</p>
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://twitter.com/kevintame"

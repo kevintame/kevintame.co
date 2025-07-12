@@ -12,10 +12,10 @@ import logoJobson from '@/images/logos/jobson.svg'
 
 const projects = [
   {
-    name: 'Soar Scribe',
+    name: 'Worplace AI',
     description:
       'AI bot that joins your video calls and provides insights, summaries, and notes on the meeting.',
-    link: { href: 'https://soarscribe.com/', label: 'soarscribe.com' },
+    link: { href: 'https://workplace-ai.com/', label: 'workplace-ai.com' },
     logo: logoSoar,
   },
   {
