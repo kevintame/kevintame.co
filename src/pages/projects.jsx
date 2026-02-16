@@ -12,7 +12,7 @@ import logoJobson from '@/images/logos/jobson.svg'
 
 const projects = [
   {
-    name: 'Worplace AI',
+    name: 'Workplace AI',
     description:
       'AI bot that joins your video calls and provides insights, summaries, and notes on the meeting.',
     link: { href: 'https://workplace-ai.com/', label: 'workplace-ai.com' },
@@ -28,7 +28,7 @@ const projects = [
   {
     name: 'Jobson',
     description:
-      'When I closed down Thrive I wanted to make sure my employees landed in a good place for their next job. I built JOBSON as an AI tool that automcically tailors their resumes and cover letters based on the job description. It make applying so much easier.',
+      'When I closed down Thrive I wanted to make sure my employees landed in a good place for their next job. I built JOBSON as an AI tool that automatically tailors their resumes and cover letters based on the job description. It make applying so much easier.',
     link: { href: 'https://jobson.co/', label: 'jobson.co' },
     logo: logoJobson,
   },
@@ -73,7 +73,7 @@ export default function Projects() {
         <title>Projects - Kevin Tame</title>
         <meta
           name="description"
-          content="Contributions I've made to imprint my small mark on the world.."
+          content="Contributions I've made to imprint my small mark on the world."
         />
       </Head>
       <SimpleLayout
@@ -89,7 +89,7 @@ export default function Projects() {
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
-                  alt=""
+                  alt={project.name}
                   className="h-8 w-8"
                   unoptimized
                 />

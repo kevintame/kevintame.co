@@ -42,10 +42,7 @@ export default function About() {
     <>
       <Head>
         <title>About - Kevin Tame</title>
-        <meta
-          name="description"
-          content="I’m Kevin Tame."
-        />
+        <meta name="description" content="I’m Kevin Tame." />
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -53,43 +50,71 @@ export default function About() {
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="Portrait of Kevin Tame"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hi, I’m Kevin Tame. 👋🏻
+              Hi, I’m Kevin Tame. 👋🏻
             </h1>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               I live in the mountains and I love to tinker.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              I’m a passionate builder and designer who is always on the hunt for innovative solutions. I love exploring the possibilities technology can bring to improve the lives of the human race. I believe every human should have the opportunity to achieve their fullest potential.
+                I’m a passionate builder and designer who is always on the hunt
+                for innovative solutions. I love exploring the possibilities
+                technology can bring to improve the lives of the human race. I
+                believe every human should have the opportunity to achieve their
+                fullest potential.
               </p>
               <p>
-              In my younger years, I would build things in my dad’s machine shop, zip around the trails on my mountain bike, and shred the nearby mountains on my snowboard. Boredom was a foreign concept to me as I always loved to find new ways to interact with the world around me.  
+                In my younger years, I would build things in my dad’s machine
+                shop, zip around the trails on my mountain bike, and shred the
+                nearby mountains on my snowboard. Boredom was a foreign concept
+                to me as I always loved to find new ways to interact with the
+                world around me.
               </p>
               <p>
-              Throughout my life, I’ve dabbled and excelled in many roles. I’m a husband, father, educator, hacker, designer, snowboarder, outdoorsman, and board gamer. If you’re seeking a collaborator for a creative tech project, a competitor for board game nights, or a comrade for thrilling outdoor pursuits, I’d love to hear from you. Let’s create some unforgettable adventures together!
+                Throughout my life, I’ve dabbled and excelled in many roles. I’m
+                a husband, father, educator, hacker, designer, snowboarder,
+                outdoorsman, and board gamer. If you’re seeking a collaborator
+                for a creative tech project, a competitor for board game nights,
+                or a comrade for thrilling outdoor pursuits, I’d love to hear
+                from you. Let’s create some unforgettable adventures together!
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/kevintame" icon={TwitterIcon}>
+              <SocialLink
+                href="https://twitter.com/kevintame"
+                icon={TwitterIcon}
+              >
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://instagram.com/kevintame" icon={InstagramIcon} className="mt-4">
+              <SocialLink
+                href="https://instagram.com/kevintame"
+                icon={InstagramIcon}
+                className="mt-4"
+              >
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="https://github.com/kevintame" icon={GitHubIcon} className="mt-4">
+              <SocialLink
+                href="https://github.com/kevintame"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/kevintame/" icon={LinkedInIcon} className="mt-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/kevintame/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink

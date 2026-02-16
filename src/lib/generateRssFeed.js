@@ -9,13 +9,13 @@ export async function generateRssFeed() {
   let articles = await getAllArticles()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
+    name: 'Kevin Tame',
+    email: 'kevintame@gmail.com',
   }
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: 'Product leader, founder, designer, and amateur adventurer.',
     author,
     id: siteUrl,
     link: siteUrl,
@@ -33,7 +33,7 @@ export async function generateRssFeed() {
     let html = ReactDOMServer.renderToStaticMarkup(
       <MemoryRouterProvider>
         <article.component isRssFeed />
-      </MemoryRouterProvider>
+      </MemoryRouterProvider>,
     )
 
     feed.addItem({

@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -12,18 +10,13 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
+import avatarImage from '@/images/avatar.jpg'
 import logoEddee from '@/images/logos/eddee.svg'
 import logoSoar from '@/images/logos/soar.svg'
 import logoNSG from '@/images/logos/nsg.svg'
 import logoRats from '@/images/logos/rats.svg'
 import logoUrbanteachers from '@/images/logos/urbanteachers.svg'
 import logoTFA from '@/images/logos/tfa.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
-import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 
@@ -86,21 +79,6 @@ function ArrowDownIcon(props) {
   )
 }
 
-function Article({ article }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  )
-}
-
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
@@ -153,7 +131,7 @@ function Resume() {
       end: '2023',
     },
     {
-      company: 'City Teaching Alliance formaly Urban Teachers',
+      company: 'City Teaching Alliance formerly Urban Teachers',
       title: 'Director of Technology',
       logo: logoUrbanteachers,
       start: '2014',
@@ -178,7 +156,12 @@ function Resume() {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+              <Image
+                src={role.logo}
+                alt={role.company}
+                className="h-7 w-7"
+                unoptimized
+              />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -208,7 +191,14 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="/resume/KevinTameResume6.2023.pdf" download target="_blank" variant="secondary" className="group mt-6 w-full">
+      {/* TODO: Resume PDF is dated June 2023 — update with current version */}
+      <Button
+        href="/resume/KevinTameResume6.2023.pdf"
+        download
+        target="_blank"
+        variant="secondary"
+        className="group mt-6 w-full"
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -216,92 +206,67 @@ function Resume() {
   )
 }
 
-function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-
-  return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Kevin Tame - Product and Design Leader
-        </title>
+        <title>Kevin Tame - Product and Design Leader</title>
         <meta
           name="description"
-          content="I’m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I'm currelty trying to build AI technology experiences to help empower every person to reach their fullest potential."
+          content="I’m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I'm currently trying to build AI technology experiences to help empower every person to reach their fullest potential."
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Product leader, founder, designer, and amateur adventurer.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hi, I’m Kevin Tame.👋🏻 
-          </p>
-          <p className="text-base text-zinc-600 dark:text-zinc-400">I’m a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. 
-            I’m currently trying to build AI technology experiences to help empower every person to reach their fullest potential.</p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/kevintame"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+        <div className="lg:flex lg:items-center lg:gap-x-12">
+          <div className="flex justify-center lg:flex-shrink-0 lg:order-last">
+            <Image
+              src={avatarImage}
+              alt="Kevin Tame"
+              className="h-64 w-64 rounded-full object-cover sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+              priority
             />
-            <SocialLink
-              href="https://instagram.com/kevintame"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com/kevintame"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/kevintame/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
+          </div>
+          <div className="mt-10 lg:mt-0 max-w-2xl">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+              Product leader, founder, designer, and amateur adventurer.
+            </h1>
+            <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+              Hi, I'm Kevin Tame.👋🏻
+            </p>
+            <p className="text-base text-zinc-600 dark:text-zinc-400">
+              I'm a designer, entrepreneur, husband, father, educator,
+              outdoorsman, and board gamer. I'm currently trying to build AI
+              technology experiences to help empower every person to reach their
+              fullest potential.
+            </p>
+            <div className="mt-6 flex gap-6">
+              <SocialLink
+                href="https://twitter.com/kevintame"
+                aria-label="Follow on Twitter"
+                icon={TwitterIcon}
+              />
+              <SocialLink
+                href="https://instagram.com/kevintame"
+                aria-label="Follow on Instagram"
+                icon={InstagramIcon}
+              />
+              <SocialLink
+                href="https://github.com/kevintame"
+                aria-label="Follow on GitHub"
+                icon={GitHubIcon}
+              />
+              <SocialLink
+                href="https://www.linkedin.com/in/kevintame/"
+                aria-label="Follow on LinkedIn"
+                icon={LinkedInIcon}
+              />
+            </div>
           </div>
         </div>
       </Container>
-      <Photos />
       <Container className="mt-24 md:mt-28">
-      <Resume />
-        {/* <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            
-          </div>
-        </div> */}
+        <Resume />
       </Container>
     </>
   )
