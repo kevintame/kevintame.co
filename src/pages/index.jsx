@@ -214,7 +214,7 @@ export default function Home({ articles }) {
         <title>Kevin Tame - Product and Design Leader</title>
         <meta
           name="description"
-          content="I’m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I'm currently trying to build AI technology experiences to help empower every person to reach their fullest potential."
+          content="I&apos;m Kevin Tame, a designer, entrepreneur, husband, father, educator, outdoorsman, and board gamer. I&apos;m currently trying to build AI technology experiences to help empower every person to reach their fullest potential."
         />
       </Head>
       <Container className="mt-9">
@@ -232,11 +232,11 @@ export default function Home({ articles }) {
               Product leader, founder, designer, and amateur adventurer.
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              Hi, I'm Kevin Tame.👋🏻
+              Hi, I&apos;m Kevin Tame.👋🏻
             </p>
             <p className="text-base text-zinc-600 dark:text-zinc-400">
-              I'm a designer, entrepreneur, husband, father, educator,
-              outdoorsman, and board gamer. I'm currently trying to build AI
+              I&apos;m a designer, entrepreneur, husband, father, educator,
+              outdoorsman, and board gamer. I&apos;m currently trying to build AI
               technology experiences to help empower every person to reach their
               fullest potential.
             </p>
