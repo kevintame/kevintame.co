@@ -11,6 +11,7 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons'
 import avatarImage from '@/images/avatar.jpg'
+import logoVivint from '@/images/logos/vivint.svg'
 import logoEddee from '@/images/logos/eddee.svg'
 import logoSoar from '@/images/logos/soar.svg'
 import logoNSG from '@/images/logos/nsg.svg'
@@ -91,8 +92,8 @@ function Resume() {
   let resume = [
     {
       company: 'Vivint Smart Home',
-      title: 'Lead UX Designer - AI',
-      logo: logoSoar,
+      title: 'Senior Manager of Product - AI',
+      logo: logoVivint,
       start: '2025',
       end: {
         label: 'Present',
@@ -240,7 +241,10 @@ export default function Home({ articles }) {
               technology experiences to help empower every person to reach their
               fullest potential.
             </p>
-            <div className="mt-6 flex gap-6">
+            <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+              Not super active, but you can follow me:
+            </p>
+            <div className="mt-2 flex gap-6">
               <SocialLink
                 href="https://twitter.com/kevintame"
                 aria-label="Follow on Twitter"
