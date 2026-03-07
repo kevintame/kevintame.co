@@ -194,7 +194,7 @@ function Resume() {
       </ol>
       {/* TODO: Resume PDF is dated June 2023 — update with current version */}
       <Button
-        href="/resume/KevinTameResume6.2023.pdf"
+        href="/resume/KevinTameResume072025.pdf"
         download
         target="_blank"
         variant="secondary"
@@ -242,7 +242,7 @@ export default function Home({ articles }) {
               fullest potential.
             </p>
             <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-              Not super active, but you can follow me:
+              I am more a lurker than poster, but you can follow me at any of these places:
             </p>
             <div className="mt-2 flex gap-6">
               <SocialLink
