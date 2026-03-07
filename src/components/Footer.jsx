@@ -26,7 +26,7 @@ export function Footer() {
                 <NavLink href="/adventure-log">Adventure Log</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/tools">Tools</NavLink>
-                <NavLink href="/album-ratings">Albums</NavLink>
+                <NavLink href="/album-ratings">Listenings</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Kevin Tame. All rights
