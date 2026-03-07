@@ -1,11 +1,15 @@
 import { Client } from '@notionhq/client'
 
 // Shared Notion client — one instance reused across all database fetches
-export const notion = new Client({ auth: process.env.NOTION_API_KEY })
+// Returns null when the API key is not configured (e.g. local dev without .env)
+export const notion = process.env.NOTION_API_KEY
+  ? new Client({ auth: process.env.NOTION_API_KEY })
+  : null
 
 // Generic database query — used by each src/lib/<thing>.js
 // Options: sorts, filter, page_size (default 100)
 export async function queryDatabase(databaseId, options = {}) {
+  if (!notion) return []
   const response = await notion.databases.query({
     database_id: databaseId,
     page_size: 100,
