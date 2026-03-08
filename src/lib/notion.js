@@ -6,12 +6,13 @@ export const notion = process.env.NOTION_API_KEY
   ? new Client({ auth: process.env.NOTION_API_KEY })
   : null
 
-// Generic database query — used by each src/lib/<thing>.js
+// Generic data source query — used by each src/lib/<thing>.js
+// Uses dataSources.query (v5 API — databases.query was removed in v5)
 // Options: sorts, filter, page_size (default 100)
-export async function queryDatabase(databaseId, options = {}) {
+export async function queryDatabase(dataSourceId, options = {}) {
   if (!notion) return []
-  const response = await notion.databases.query({
-    database_id: databaseId,
+  const response = await notion.dataSources.query({
+    data_source_id: dataSourceId,
     page_size: 100,
     ...options,
   })
