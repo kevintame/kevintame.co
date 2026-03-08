@@ -116,7 +116,7 @@ export default function AlbumRatings({ albums }) {
   return (
     <>
       <Head>
-        <title>Album Ratings - Kevin Tame</title>
+        <title>Listening - Kevin Tame</title>
         <meta
           name="description"
           content="My ratings and reviews of albums I've been listening to."
