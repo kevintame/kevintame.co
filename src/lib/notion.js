@@ -22,11 +22,13 @@ export async function queryDatabase(dataSourceId, options = {}) {
 // Property extractors — Notion's raw API nests values several levels deep.
 // These helpers keep transform functions clean and readable.
 export const getProp = {
-  title:  (page, name) => page.properties[name]?.title[0]?.plain_text ?? '',
-  text:   (page, name) => page.properties[name]?.rich_text[0]?.plain_text ?? '',
-  number: (page, name) => page.properties[name]?.number ?? null,
-  select: (page, name) => page.properties[name]?.select?.name ?? null,
-  date:   (page, name) => page.properties[name]?.date?.start ?? null,
-  url:    (page, name) => page.properties[name]?.url ?? null,
-  checkbox: (page, name) => page.properties[name]?.checkbox ?? false,
+  title:       (page, name) => page.properties[name]?.title[0]?.plain_text ?? '',
+  text:        (page, name) => page.properties[name]?.rich_text[0]?.plain_text ?? '',
+  number:      (page, name) => page.properties[name]?.number ?? null,
+  select:      (page, name) => page.properties[name]?.select?.name ?? null,
+  multiSelect: (page, name) => page.properties[name]?.multi_select?.map((o) => o.name).join(', ') ?? '',
+  date:        (page, name) => page.properties[name]?.date?.start ?? null,
+  url:         (page, name) => page.properties[name]?.url ?? null,
+  checkbox:    (page, name) => page.properties[name]?.checkbox ?? false,
+  file:        (page, name) => page.properties[name]?.files?.[0]?.file?.url ?? page.properties[name]?.files?.[0]?.external?.url ?? null,
 }

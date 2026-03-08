@@ -69,11 +69,11 @@ function BookCard({ book }) {
 
       <div className="mt-auto flex items-center gap-3 text-xs text-zinc-400 dark:text-zinc-500">
         {book.publicationYear && <span>{book.publicationYear}</span>}
-        {book.publicationYear && book.ratingDate && <span>·</span>}
-        {book.ratingDate && (
+        {book.publicationYear && book.finishDate && <span>·</span>}
+        {book.finishDate && (
           <span>
-            Rated{' '}
-            {new Date(book.ratingDate).toLocaleDateString('en-US', {
+            Finished{' '}
+            {new Date(book.finishDate).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
             })}
@@ -85,7 +85,7 @@ function BookCard({ book }) {
 }
 
 const SORT_OPTIONS = [
-  { key: 'ratingDate', label: 'Date Rated' },
+  { key: 'finishDate', label: 'Date Finished' },
   { key: 'rating', label: 'Rating' },
   { key: 'title', label: 'Title' },
   { key: 'publicationYear', label: 'Publication Year' },
@@ -93,8 +93,8 @@ const SORT_OPTIONS = [
 
 function sortBooks(books, sortKey) {
   return [...books].sort((a, b) => {
-    if (sortKey === 'ratingDate') {
-      return new Date(b.ratingDate ?? 0) - new Date(a.ratingDate ?? 0)
+    if (sortKey === 'finishDate') {
+      return new Date(b.finishDate ?? 0) - new Date(a.finishDate ?? 0)
     }
     if (sortKey === 'rating') {
       return (b.rating ?? 0) - (a.rating ?? 0)
@@ -110,7 +110,7 @@ function sortBooks(books, sortKey) {
 }
 
 export default function Reading({ books }) {
-  const [sortKey, setSortKey] = useState('ratingDate')
+  const [sortKey, setSortKey] = useState('finishDate')
   const sorted = useMemo(() => sortBooks(books, sortKey), [books, sortKey])
 
   return (
