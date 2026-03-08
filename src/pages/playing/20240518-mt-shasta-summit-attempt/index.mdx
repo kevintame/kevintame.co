@@ -1,4 +1,4 @@
-import { AdventureLayout } from '@/components/AdventureLayout'
+import { PlayingLayout } from '@/components/PlayingLayout'
 import Image from 'next/image'
 import photo1 from '@/images/photos/playing/20240518-mt-shasta-summit-attempt/photo-1.jpeg'
 import photo2 from '@/images/photos/playing/20240518-mt-shasta-summit-attempt/photo-2.jpeg'
@@ -23,7 +23,7 @@ export const meta = {
     'A 12+ hour alpine push up Avalanche Gulch with Graham Orme. 13,322 ft high point, 857 ft short of the summit, followed by a 52-minute ski descent of 6,390 vertical feet.',
 }
 
-export default (props) => <AdventureLayout meta={meta} {...props} />
+export default (props) => <PlayingLayout meta={meta} {...props} />
 
 <Image src={photo1} alt="Kevin bootpacking high on Avalanche Gulch in a yellow jacket with ski poles, panoramic views of the Cascade Range and green valleys far below" className="rounded-2xl" />
 
