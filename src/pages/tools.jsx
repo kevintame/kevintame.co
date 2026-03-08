@@ -54,9 +54,19 @@ export default function Uses() {
               In my design work, I do a lot of storyboarding and sketching. The
               nano texture is really nice for sketching.
             </Tool>
+            <Tool title="Apple Studio Display">
+              The color and Retina display are very nice.
+            </Tool>
+            <Tool title="Boo - Mac Mini M4">
+              My protactive personalized AI agent named Boo. 👻
+            </Tool>
+
           </ToolsSection>
 
           <ToolsSection title="Development Tools">
+            <Tool title="Claude Code">
+              I’m not loyal to any one AI tool but Opus 4.6 is just the best right now.
+            </Tool>
             <Tool title="VS Code">
               It’s good, and I don’t have any complaints. I still use Sublime
               Text here and there, but for the most part, I use this.
@@ -64,6 +74,12 @@ export default function Uses() {
             <Tool title="Terminal">
               I know people like iTerm, but I’m not even sure what benefits it
               offers. So I’ve just stuck with the built-in Terminal.
+            </Tool>
+            <Tool title="N8N">
+              I love to build visual workflows. There is really something nice about seeing it execute visually.
+            </Tool>
+            <Tool title="Supabase">
+              My AI second brain is a vector database that connects to my Notion so that I can sementically search and get context within any tool.
             </Tool>
           </ToolsSection>
 
@@ -83,13 +99,14 @@ export default function Uses() {
           </ToolsSection>
 
           <ToolsSection title="Productivity">
-            <Tool title="Things">
-              For more than a decade, the Things app has helped me stay
-              organized with the tasks I need to get done.
+            <Tool title="Second Brain">
+              My second brain is more automated then ever. AI makes classifying and organizaing so easy. 
             </Tool>
-            <Tool title="Obsidian">
-              I love being able to keep all my notes as markdown files. The
-              customization options are another great reason to use Obsidian.
+            <Tool title="AI Second Brain">
+              My second brain is more automated then ever. AI makes classifying and organizaing so easy. 
+            </Tool>
+            <Tool title="Notion">
+              Notion is now my go to for my second brain. 
             </Tool>
           </ToolsSection>
 
@@ -106,6 +123,9 @@ export default function Uses() {
             </Tool>
             <Tool title="Arrs">If you know, you know.</Tool>
             <Tool title="Komga">My comic and manga server.</Tool>
+            <Tool title="Home Assistant">
+              Hand down the best home automation tool.
+            </Tool>
             <Tool title="Immich">
               I was tired of paying extra for iCloud storage, so I moved all of
               our photos to a locally hosted photo service.
@@ -113,7 +133,7 @@ export default function Uses() {
           </ToolsSection>
 
           <ToolsSection title="Devices">
-            <Tool title="Switch OLED">
+            <Tool title="Switch 2">
               Nintendo’s lack of quality family sharing frustrates me, but I
               can’t deny it’s one of the best gaming consoles ever made. It’s my
               go-to for video game fun.
@@ -128,6 +148,9 @@ export default function Uses() {
               seem so crazy now. I’ve owned a few pairs over the years, and
               they’re truly brilliant headphones.
             </Tool>
+            <Tool title="Topping DX5 II">
+              The Topping DX5 II DAC/AMP is almost endgame for mixing & mastering, with better conversion & power delivery than many interfaces. I love it.
+            </Tool>
           </ToolsSection>
 
           <ToolsSection title="Adventure Gear">
@@ -135,16 +158,16 @@ export default function Uses() {
               I’ve been riding a Custom for a long time, and every time I try
               another board, it just doesn’t cut it for me.
             </Tool>
-            <Tool title="Atomic Bent Chetlers">
+            <Tool title="Atomic Bent Chetlers 100s and 120s">
               I’m newer to skiing, but I love these for the resort.
             </Tool>
             <Tool title="Dynastar Tour 99">
-              I’m not a great skier, but these are light and great for uphill
+              I’m a average skier, but these are light and great for uphill
               travel. I’ve been very pleased with them, and I think you would
               like them too.
             </Tool>
             <Tool title="Dynafit Radical Pro Boots">
-              It took me a long time.
+              It took me a long time to find the right boot. I have wide hobbit feet and these are just right for me.
             </Tool>
             <Tool title="Brooks Cascadia">My favorite trail runners.</Tool>
             <Tool title="Danner Mountain 600">
