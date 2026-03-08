@@ -3,7 +3,7 @@ import * as path from 'path'
 
 async function importAdventure(adventureFilename) {
   let { meta, default: component } = await import(
-    `../pages/adventure-log/${adventureFilename}`
+    `../pages/playing-log/${adventureFilename}`
   )
   return {
     slug: adventureFilename.replace(/(\/index)?\.mdx$/, ''),
@@ -14,7 +14,7 @@ async function importAdventure(adventureFilename) {
 
 export async function getAllAdventures() {
   let adventureFilenames = await glob(['*.mdx', '*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'src/pages/adventure-log'),
+    cwd: path.join(process.cwd(), 'src/pages/playing-log'),
   })
 
   let adventures = await Promise.all(adventureFilenames.map(importAdventure))

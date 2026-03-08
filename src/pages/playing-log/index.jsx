@@ -9,7 +9,7 @@ function Adventure({ adventure }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/adventure-log/${adventure.slug}`}>
+        <Card.Title href={`/playing-log/${adventure.slug}`}>
           {adventure.title}
         </Card.Title>
         <Card.Eyebrow
@@ -38,7 +38,7 @@ export default function AdventureLogIndex({ adventures }) {
   return (
     <>
       <Head>
-        <title>Adventuring - Kevin Tame</title>
+        <title>Playing - Kevin Tame</title>
         <meta
           name="description"
           content="A log of my adventures — hikes, travels, experiences, and everything in between."
