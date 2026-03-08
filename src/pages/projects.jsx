@@ -70,7 +70,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Kevin Tame</title>
+        <title>Building - Kevin Tame</title>
         <meta
           name="description"
           content="Contributions I've made to imprint my small mark on the world."
