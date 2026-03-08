@@ -38,7 +38,7 @@ export default function AdventureLogIndex({ adventures }) {
   return (
     <>
       <Head>
-        <title>Adventure Log - Kevin Tame</title>
+        <title>Adventuring - Kevin Tame</title>
         <meta
           name="description"
           content="A log of my adventures — hikes, travels, experiences, and everything in between."
