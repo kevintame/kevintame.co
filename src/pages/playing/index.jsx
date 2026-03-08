@@ -9,7 +9,7 @@ function Adventure({ adventure }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/playing-log/${adventure.slug}`}>
+        <Card.Title href={`/playing/${adventure.slug}`}>
           {adventure.title}
         </Card.Title>
         <Card.Eyebrow
