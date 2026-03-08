@@ -38,7 +38,7 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Articles - Kevin Tame</title>
+        <title>Writing - Kevin Tame</title>
         <meta
           name="description"
           content="All of my long-form thoughts on things I'm interested in. Collected in chronological order."
