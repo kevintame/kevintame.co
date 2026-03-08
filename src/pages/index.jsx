@@ -19,7 +19,7 @@ import logoRats from '@/images/logos/rats.svg'
 import logoUrbanteachers from '@/images/logos/urbanteachers.svg'
 import logoTFA from '@/images/logos/tfa.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
+import { getAllWriting } from '@/lib/getAllWriting'
 
 function MailIcon(props) {
   return (
@@ -283,7 +283,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: (await getAllArticles())
+      articles: (await getAllWriting())
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),
     },
