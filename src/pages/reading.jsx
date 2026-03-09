@@ -4,24 +4,30 @@ import Image from 'next/image'
 import clsx from 'clsx'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getBooks } from '@/lib/books'
+import { getBooks } from '@/lib/hardcover'
 
-function RatingDots({ rating, max = 10 }) {
+function RatingDots({ rating, max = 5 }) {
   return (
     <div className="flex items-center gap-1" aria-label={`${rating} out of ${max}`}>
-      {Array.from({ length: max }).map((_, i) => (
-        <span
-          key={i}
-          className={clsx(
-            'h-2 w-2 rounded-full',
-            i < rating
-              ? 'bg-purple-500 dark:bg-purple-400'
-              : 'bg-zinc-200 dark:bg-zinc-700',
-          )}
-        />
-      ))}
+      {Array.from({ length: max }).map((_, i) => {
+        const full = i + 1 <= rating
+        const half = !full && i < rating
+        return (
+          <span
+            key={i}
+            className="relative h-2 w-2 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700"
+          >
+            {(full || half) && (
+              <span
+                className="absolute inset-y-0 left-0 bg-purple-500 dark:bg-purple-400"
+                style={{ width: full ? '100%' : '50%' }}
+              />
+            )}
+          </span>
+        )
+      })}
       <span className="ml-2 text-sm font-semibold text-purple-500 dark:text-purple-400">
-        {rating}/10
+        {rating}/5
       </span>
     </div>
   )
@@ -29,7 +35,14 @@ function RatingDots({ rating, max = 10 }) {
 
 function BookCard({ book }) {
   return (
-    <li className="group relative flex flex-col gap-4 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <li className="group relative flex flex-col gap-4 rounded-2xl border border-zinc-100 p-6 transition hover:border-purple-500 dark:border-zinc-700/40 dark:hover:border-purple-400">
+      <a
+        href={`https://hardcover.app/books/${book.id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 rounded-2xl"
+        aria-label={`View ${book.title} on Hardcover`}
+      />
       <div className="flex items-start gap-4">
         {book.coverArt && (
           <div className="relative h-20 w-14 flex-none overflow-hidden rounded-lg shadow-md">
@@ -67,19 +80,15 @@ function BookCard({ book }) {
         </p>
       )}
 
-      <div className="mt-auto flex items-center gap-3 text-xs text-zinc-400 dark:text-zinc-500">
-        {book.publicationYear && <span>{book.publicationYear}</span>}
-        {book.publicationYear && book.finishDate && <span>·</span>}
-        {book.finishDate && (
-          <span>
-            Finished{' '}
-            {new Date(book.finishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-            })}
-          </span>
-        )}
-      </div>
+      {book.finishDate && (
+        <div className="mt-auto text-xs text-zinc-400 dark:text-zinc-500">
+          Finished{' '}
+          {new Date(book.finishDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+          })}
+        </div>
+      )}
     </li>
   )
 }
@@ -88,7 +97,6 @@ const SORT_OPTIONS = [
   { key: 'finishDate', label: 'Date Finished' },
   { key: 'rating', label: 'Rating' },
   { key: 'title', label: 'Title' },
-  { key: 'publicationYear', label: 'Publication Year' },
 ]
 
 function sortBooks(books, sortKey) {
@@ -101,9 +109,6 @@ function sortBooks(books, sortKey) {
     }
     if (sortKey === 'title') {
       return (a.title ?? '').localeCompare(b.title ?? '')
-    }
-    if (sortKey === 'publicationYear') {
-      return (a.publicationYear ?? 0) - (b.publicationYear ?? 0)
     }
     return 0
   })
