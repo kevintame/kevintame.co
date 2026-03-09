@@ -63,6 +63,52 @@ function transformBook(userBook) {
   }
 }
 
+const CURRENTLY_READING_QUERY = `
+  {
+    me {
+      user_books(
+        where: { status_id: { _eq: 2 } }
+        order_by: [{ date_added: desc }]
+      ) {
+        book {
+          title
+          slug
+          cached_contributors
+          image {
+            url
+          }
+        }
+      }
+    }
+  }
+`
+
+export async function getCurrentlyReading() {
+  const res = await fetch('https://api.hardcover.app/v1/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${process.env.HARDCOVER_API_KEY}`,
+    },
+    body: JSON.stringify({ query: CURRENTLY_READING_QUERY }),
+  })
+  const { data } = await res.json()
+  return data.me[0].user_books.map(({ book }) => {
+    const contributors = parseJson(book.cached_contributors)
+    const author = contributors
+      .slice(0, 1)
+      .map((c) => c.name)
+      .filter(Boolean)
+      .join(', ')
+    return {
+      id: book.slug,
+      title: book.title ?? null,
+      author: author || null,
+      coverArt: book.image?.url ?? null,
+    }
+  })
+}
+
 export async function getBooks() {
   const res = await fetch('https://api.hardcover.app/v1/graphql', {
     method: 'POST',

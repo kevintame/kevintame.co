@@ -4,7 +4,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getBooks } from '@/lib/hardcover'
+import { getBooks, getCurrentlyReading } from '@/lib/hardcover'
 
 function RatingDots({ rating, max = 5 }) {
   return (
@@ -33,11 +33,56 @@ function RatingDots({ rating, max = 5 }) {
   )
 }
 
+function CurrentlyReading({ books }) {
+  if (!books.length) return null
+  return (
+    <div className="mb-8">
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+        Currently Reading
+      </h2>
+      <ul className="flex flex-wrap gap-3">
+        {books.map((book) => (
+          <li key={book.id}>
+            <a
+              href={`https://hardcover.app/books/${book.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-zinc-100 px-4 py-3 transition hover:border-purple-500 dark:border-zinc-700/40 dark:hover:border-purple-400"
+            >
+              {book.coverArt && (
+                <div className="relative h-12 w-8 flex-none overflow-hidden rounded shadow-sm">
+                  <Image
+                    src={book.coverArt}
+                    alt={`${book.title} cover`}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+              )}
+              <div>
+                <p className="text-sm font-medium text-zinc-800 dark:text-zinc-100">
+                  {book.title}
+                </p>
+                {book.author && (
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                    {book.author}
+                  </p>
+                )}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function BookCard({ book }) {
   return (
     <li className="group relative flex flex-col gap-4 rounded-2xl border border-zinc-100 p-6 transition hover:border-purple-500 dark:border-zinc-700/40 dark:hover:border-purple-400">
       <a
-        href={`https://hardcover.app/books/${book.id}`}
+        href={`https://hardcover.app/books/${book.id}/reviews/@kevintame`}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 rounded-2xl"
@@ -114,7 +159,7 @@ function sortBooks(books, sortKey) {
   })
 }
 
-export default function Reading({ books }) {
+export default function Reading({ books, currentlyReading }) {
   const [sortKey, setSortKey] = useState('finishDate')
   const sorted = useMemo(() => sortBooks(books, sortKey), [books, sortKey])
 
@@ -128,9 +173,13 @@ export default function Reading({ books }) {
         />
       </Head>
       <SimpleLayout
-        title="Book Ratings"
-        intro="Books I've been reading, ranked and reviewed."
+        title="Books I'm reading and what I think of them."
+        intro="I listen to a lot of audiobooks, mostly fantasy, sci-fi, AI, business and product. I'm always looking for good recommendations, so let me know if you have any!"
       >
+        <CurrentlyReading books={currentlyReading} />
+        <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+          Finished Reading
+        </h2>
         <div className="mb-8 flex flex-wrap gap-2">
           {SORT_OPTIONS.map((opt) => (
             <button
@@ -165,10 +214,13 @@ export default function Reading({ books }) {
 }
 
 export async function getStaticProps() {
-  const books = await getBooks()
+  const [books, currentlyReading] = await Promise.all([
+    getBooks(),
+    getCurrentlyReading(),
+  ])
 
   return {
-    props: { books },
+    props: { books, currentlyReading },
     revalidate: 3600,
   }
 }
