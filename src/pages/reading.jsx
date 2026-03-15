@@ -214,10 +214,17 @@ export default function Reading({ books, currentlyReading }) {
 }
 
 export async function getStaticProps() {
-  const [books, currentlyReading] = await Promise.all([
-    getBooks(),
-    getCurrentlyReading(),
-  ])
+  let books = []
+  let currentlyReading = []
+
+  try {
+    ;[books, currentlyReading] = await Promise.all([
+      getBooks(),
+      getCurrentlyReading(),
+    ])
+  } catch {
+    // Hardcover API may be unavailable — render with empty data
+  }
 
   return {
     props: { books, currentlyReading },

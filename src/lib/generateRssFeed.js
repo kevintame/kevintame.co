@@ -1,12 +1,14 @@
 import ReactDOMServer from 'react-dom/server'
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypePrism from 'rehype-prism-plus'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 
-import { getAllWriting } from './getAllWriting'
+import { getArticles, getArticleContent } from './writing'
 
 export async function generateRssFeed() {
-  let articles = await getAllWriting()
+  let articles = await getArticles()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
     name: 'Kevin Tame',
@@ -30,10 +32,11 @@ export async function generateRssFeed() {
 
   for (let article of articles) {
     let url = `${siteUrl}/writing/${article.slug}`
+    let content = await getArticleContent(article.id)
     let html = ReactDOMServer.renderToStaticMarkup(
-      <MemoryRouterProvider>
-        <article.component isRssFeed />
-      </MemoryRouterProvider>,
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypePrism]}>
+        {content}
+      </ReactMarkdown>,
     )
 
     feed.addItem({
